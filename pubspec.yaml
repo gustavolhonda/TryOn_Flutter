@@ -1,0 +1,56 @@
+name: atividade_avaliativa_2
+description: A Flutter implementation of the TryOn e-commerce app
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  provider: ^6.1.1
+
+  # Database
+  floor: ^1.4.2
+  sqflite: ^2.3.0
+
+  # HTTP client
+  http: ^1.1.0
+
+  # Navigation
+  go_router: ^12.1.1
+
+  # UI
+  cupertino_icons: ^1.0.2
+  google_fonts: ^6.1.0
+
+  # Image loading
+  cached_network_image: ^3.3.0
+
+  # Storage
+  shared_preferences: ^2.2.2
+
+  # Utils
+  intl: ^0.18.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Floor code generation
+  floor_generator: ^1.4.2
+  build_runner: ^2.4.7
+
+  # Linting
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
