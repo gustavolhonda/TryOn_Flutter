@@ -189,6 +189,346 @@ class S {
       args: [],
     );
   }
+
+  /// `Register`
+  String get registerTitle {
+    return Intl.message(
+      'Register',
+      name: 'registerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register Screen`
+  String get registerScreen {
+    return Intl.message(
+      'Register Screen',
+      name: 'registerScreen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password`
+  String get forgotPasswordTitle {
+    return Intl.message(
+      'Forgot Password',
+      name: 'forgotPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password Recovery Screen`
+  String get forgotPasswordScreen {
+    return Intl.message(
+      'Password Recovery Screen',
+      name: 'forgotPasswordScreen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your notifications`
+  String get notificationsTitle {
+    return Intl.message(
+      'Your notifications',
+      name: 'notificationsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No notifications`
+  String get noNotifications {
+    return Intl.message(
+      'No notifications',
+      name: 'noNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get mainHome {
+    return Intl.message(
+      'Home',
+      name: 'mainHome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orders`
+  String get mainOrders {
+    return Intl.message(
+      'Orders',
+      name: 'mainOrders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get mainNotifications {
+    return Intl.message(
+      'Notifications',
+      name: 'mainNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Orders`
+  String get ordersTitle {
+    return Intl.message(
+      'My Orders',
+      name: 'ordersTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your cart is empty`
+  String get cartEmpty {
+    return Intl.message(
+      'Your cart is empty',
+      name: 'cartEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total ({count} items):`
+  String totalItems(Object count) {
+    return Intl.message(
+      'Total ($count items):',
+      name: 'totalItems',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Clear Cart`
+  String get clearCart {
+    return Intl.message(
+      'Clear Cart',
+      name: 'clearCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to remove all items from the cart?`
+  String get clearCartConfirm {
+    return Intl.message(
+      'Are you sure you want to remove all items from the cart?',
+      name: 'clearCartConfirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear`
+  String get clear {
+    return Intl.message(
+      'Clear',
+      name: 'clear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish Order`
+  String get finishOrder {
+    return Intl.message(
+      'Finish Order',
+      name: 'finishOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order placed successfully!`
+  String get orderSuccess {
+    return Intl.message(
+      'Order placed successfully!',
+      name: 'orderSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description:`
+  String get description {
+    return Intl.message(
+      'Description:',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to Cart`
+  String get addToCart {
+    return Intl.message(
+      'Add to Cart',
+      name: 'addToCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `TryOn`
+  String get appTitle {
+    return Intl.message(
+      'TryOn',
+      name: 'appTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get tabAll {
+    return Intl.message(
+      'All',
+      name: 'tabAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Promotions`
+  String get tabPromotions {
+    return Intl.message(
+      'Promotions',
+      name: 'tabPromotions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stores`
+  String get tabStores {
+    return Intl.message(
+      'Stores',
+      name: 'tabStores',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Highlights`
+  String get highlights {
+    return Intl.message(
+      'Highlights',
+      name: 'highlights',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Products`
+  String get products {
+    return Intl.message(
+      'Products',
+      name: 'products',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try Again`
+  String get tryAgain {
+    return Intl.message(
+      'Try Again',
+      name: 'tryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stores`
+  String get stores {
+    return Intl.message(
+      'Stores',
+      name: 'stores',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Street Wear`
+  String get storeStreetWear {
+    return Intl.message(
+      'Street Wear',
+      name: 'storeStreetWear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error loading products`
+  String get errorLoadingProducts {
+    return Intl.message(
+      'Error loading products',
+      name: 'errorLoadingProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product added to cart!`
+  String get productAddedToCart {
+    return Intl.message(
+      'Product added to cart!',
+      name: 'productAddedToCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error adding to cart`
+  String get errorAddingToCart {
+    return Intl.message(
+      'Error adding to cart',
+      name: 'errorAddingToCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select a size`
+  String get selectSize {
+    return Intl.message(
+      'Select a size',
+      name: 'selectSize',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading...`
+  String get loading {
+    return Intl.message(
+      'Loading...',
+      name: 'loading',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

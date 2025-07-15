@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import '../models/product.dart';
 import '../repositories/cart_repository.dart';
+import 'package:flutter/widgets.dart';
+import 'package:atividade_avaliativa_2/generated/l10n.dart';
 
 class ProductViewModel extends ChangeNotifier {
   final CartRepository _cartRepository;
@@ -55,7 +57,6 @@ class ProductViewModel extends ChangeNotifier {
     _toastMessage = message;
     _showToast = true;
     notifyListeners();
-    
     // Auto-hide toast after 2 seconds
     Future.delayed(const Duration(seconds: 2), () {
       _showToast = false;
@@ -63,22 +64,22 @@ class ProductViewModel extends ChangeNotifier {
     });
   }
 
-  Future<void> addToCart(Product product, String size) async {
+  Future<void> addToCart(Product product, String size, BuildContext context) async {
     try {
       await _cartRepository.addToCart(product, size);
-      showToastMessage('Produto adicionado ao carrinho!');
+      showToastMessage(S.of(context).productAddedToCart);
     } catch (e) {
-      showToastMessage('Erro ao adicionar ao carrinho');
+      showToastMessage(S.of(context).errorAddingToCart);
       debugPrint('Error adding to cart: $e');
     }
   }
 
-  Future<void> addToCartWithSelectedSize(Product product) async {
+  Future<void> addToCartWithSelectedSize(Product product, BuildContext context) async {
     final selectedSize = getSelectedSize(product.id);
     if (selectedSize != null) {
-      await addToCart(product, selectedSize);
+      await addToCart(product, selectedSize, context);
     } else {
-      showToastMessage('Selecione um tamanho');
+      showToastMessage(S.of(context).selectSize);
     }
   }
 } 

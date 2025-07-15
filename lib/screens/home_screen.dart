@@ -6,6 +6,7 @@ import '../viewmodels/home_viewmodel.dart';
 import '../viewmodels/product_viewmodel.dart';
 import '../app/app.dart';
 import '../widgets/loading_dialog.dart';
+import '../generated/l10n.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<HomeViewModel>().loadProducts();
+      context.read<HomeViewModel>().loadProducts(context);
     });
   }
 
@@ -53,10 +54,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       },
                       color: const Color(0xFF5C4438),
                     ),
-                    const Expanded(
+                    Expanded(
                       child: Text(
-                        'TryOn',
-                        style: TextStyle(
+                        S.of(context).appTitle,
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
                           color: Color(0xFF5C4438),
@@ -81,10 +82,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 color: const Color(0xFFFCEAE5),
                 child: TabBar(
                   controller: _tabController,
-                  tabs: const [
-                    Tab(text: 'Todos'),
-                    Tab(text: 'Promoções'),
-                    Tab(text: 'Lojas'),
+                  tabs: [
+                    Tab(text: S.of(context).tabAll),
+                    Tab(text: S.of(context).tabPromotions),
+                    Tab(text: S.of(context).tabStores),
                   ],
                   labelColor: const Color(0xFF8B3A2E),
                   unselectedLabelColor: const Color(0xFF5C4438),
@@ -111,9 +112,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              'Destaques',
-                              style: TextStyle(
+                            Text(
+                              S.of(context).highlights,
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -162,9 +163,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              'Produtos',
-                              style: TextStyle(
+                            Text(
+                              S.of(context).products,
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -182,8 +183,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     ),
                                     const SizedBox(height: 8),
                                     ElevatedButton(
-                                      onPressed: viewModel.refreshProducts,
-                                      child: const Text('Tentar Novamente'),
+                                      onPressed: () => viewModel.refreshProducts(context),
+                                      child: Text(S.of(context).tryAgain),
                                     ),
                                   ],
                                 ),
@@ -356,9 +357,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              'Lojas',
-                              style: TextStyle(
+                            Text(
+                              S.of(context).stores,
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -401,10 +402,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   Widget _buildStoreCard(int index) {
     final stores = [
-      {'name': 'Street Wear', 'avatar': 'https://randomuser.me/api/portraits/men/1.jpg'},
-      {'name': 'Street Wear', 'avatar': 'https://randomuser.me/api/portraits/men/1.jpg'},
-      {'name': 'Street Wear', 'avatar': 'https://randomuser.me/api/portraits/men/1.jpg'},
-      {'name': 'Street Wear', 'avatar': 'https://randomuser.me/api/portraits/men/1.jpg'},
+      {'name': S.of(context).storeStreetWear, 'avatar': 'https://randomuser.me/api/portraits/men/1.jpg'},
+      {'name': S.of(context).storeStreetWear, 'avatar': 'https://randomuser.me/api/portraits/men/1.jpg'},
+      {'name': S.of(context).storeStreetWear, 'avatar': 'https://randomuser.me/api/portraits/men/1.jpg'},
+      {'name': S.of(context).storeStreetWear, 'avatar': 'https://randomuser.me/api/portraits/men/1.jpg'},
     ];
 
     const bgUrl = "https://img.freepik.com/fotos-gratis/roupas-infantis_23-2148166232.jpg";

@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import '../models/product.dart';
 import '../repositories/product_repository.dart';
+import 'package:atividade_avaliativa_2/generated/l10n.dart';
 
 class HomeViewModel extends ChangeNotifier {
   final ProductRepository _productRepository;
@@ -28,7 +30,7 @@ class HomeViewModel extends ChangeNotifier {
     }
   }
 
-  Future<void> loadProducts() async {
+  Future<void> loadProducts(BuildContext context) async {
     _isLoading = true;
     _error = null;
     notifyListeners();
@@ -37,7 +39,7 @@ class HomeViewModel extends ChangeNotifier {
       _products = await _productRepository.getProducts();
       _error = null;
     } catch (e) {
-      _error = 'Erro ao carregar produtos';
+      _error = S.of(context).errorLoadingProducts;
       debugPrint('Error loading products: $e');
     } finally {
       _isLoading = false;
@@ -45,7 +47,7 @@ class HomeViewModel extends ChangeNotifier {
     }
   }
 
-  void refreshProducts() {
-    loadProducts();
+  void refreshProducts(BuildContext context) {
+    loadProducts(context);
   }
 } 

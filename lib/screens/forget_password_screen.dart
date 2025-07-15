@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../generated/l10n.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});
@@ -7,12 +8,12 @@ class ForgetPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Esqueceu a Senha'),
+        title: Text(S.of(context).forgotPasswordTitle),
       ),
-      body: const Center(
+      body: Center(
         child: Text(
-          'Tela de Recuperação de Senha',
-          style: TextStyle(fontSize: 24),
+          S.of(context).forgotPasswordScreen,
+          style: const TextStyle(fontSize: 24),
         ),
       ),
     );

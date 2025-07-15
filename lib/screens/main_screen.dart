@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../generated/l10n.dart';
 import 'home_screen.dart';
 import 'orders_screen.dart';
 import 'notifications_screen.dart';
@@ -30,18 +31,18 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Início',
+            icon: const Icon(Icons.home),
+            label: S.of(context).mainHome,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Pedidos',
+            icon: const Icon(Icons.shopping_cart),
+            label: S.of(context).mainOrders,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Notificações',
+            icon: const Icon(Icons.notifications),
+            label: S.of(context).mainNotifications,
           ),
         ],
         currentIndex: _selectedIndex,

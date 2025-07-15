@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import '../models/product.dart';
 import '../viewmodels/product_viewmodel.dart';
 import '../widgets/toast_widget.dart';
+import '../generated/l10n.dart';
 
 class ProductScreen extends StatefulWidget {
   final Product product;
@@ -239,9 +240,9 @@ class _ProductScreenState extends State<ProductScreen> {
                           const SizedBox(height: 24),
 
                           // Description
-                          const Text(
-                            'Descrição:',
-                            style: TextStyle(
+                          Text(
+                            S.of(context).description,
+                            style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
@@ -282,7 +283,7 @@ class _ProductScreenState extends State<ProductScreen> {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      viewModel.addToCartWithSelectedSize(widget.product);
+                      viewModel.addToCartWithSelectedSize(widget.product, context);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF8B3A2E),
@@ -292,9 +293,9 @@ class _ProductScreenState extends State<ProductScreen> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    child: const Text(
-                      'Adicionar ao Carrinho',
-                      style: TextStyle(fontSize: 18),
+                    child: Text(
+                      S.of(context).addToCart,
+                      style: const TextStyle(fontSize: 18),
                     ),
                   ),
                 ),
