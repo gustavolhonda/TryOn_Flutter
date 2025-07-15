@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../viewmodels/login_viewmodel.dart';
 import '../app/app.dart';
 import '../widgets/loading_dialog.dart';
+import '../generated/l10n.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -27,13 +28,13 @@ class _LoginScreenState extends State<LoginScreen> {
   String _getErrorMessage(LoginError error) {
     switch (error) {
       case LoginError.requiredField:
-        return 'Este campo é obrigatório';
+        return S.of(context).requiredField;
       case LoginError.wrongEmail:
-        return 'Email incorreto';
+        return S.of(context).wrongEmail;
       case LoginError.wrongPassword:
-        return 'Senha incorreta';
+        return S.of(context).wrongPassword;
       case LoginError.unknown:
-        return 'Erro desconhecido';
+        return S.of(context).unknownError;
       case LoginError.none:
         return '';
     }
@@ -77,16 +78,16 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(height: 24),
 
                       // Welcome Text
-                      const Text(
-                        'Bem vindo ao TryOn!',
-                        style: TextStyle(
+                      Text(
+                        S.of(context).welcomeTitle,
+                        style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Text(
-                        'Prove e Aprove',
-                        style: TextStyle(
+                      Text(
+                        S.of(context).welcomeSubtitle,
+                        style: const TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
                         ),
@@ -97,8 +98,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextFormField(
                         controller: _usernameController,
                         decoration: InputDecoration(
-                          labelText: 'Email',
-                          hintText: 'Insira o seu email',
+                          labelText: S.of(context).emailLabel,
+                          hintText: S.of(context).emailHint,
                           errorText: viewModel.usernameError != LoginError.none
                               ? _getErrorMessage(viewModel.usernameError)
                               : null,
@@ -118,8 +119,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextFormField(
                         controller: _passwordController,
                         decoration: InputDecoration(
-                          labelText: 'Senha',
-                          hintText: 'Insira a sua senha',
+                          labelText: S.of(context).passwordLabel,
+                          hintText: S.of(context).passwordHint,
                           errorText: viewModel.passwordError != LoginError.none
                               ? _getErrorMessage(viewModel.passwordError)
                               : null,
@@ -148,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               borderRadius: BorderRadius.circular(8),
                             ),
                           ),
-                          child: const Text('Entrar'),
+                          child: Text(S.of(context).loginButton),
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -156,9 +157,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       // Forget Password
                       TextButton(
                         onPressed: () => context.push(AppRouter.forgetPasswordRoute),
-                        child: const Text(
-                          'Esqueceu a senha? Clique aqui',
-                          style: TextStyle(color: Color(0xFF8B3A2E)),
+                        child: Text(
+                          S.of(context).forgotPassword,
+                          style: const TextStyle(color: Color(0xFF8B3A2E)),
                         ),
                       ),
                       const SizedBox(height: 24),
@@ -167,12 +168,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text('Ainda não tem uma conta?'),
+                          Text(S.of(context).noAccount),
                           TextButton(
                             onPressed: () => context.push(AppRouter.registerRoute),
-                            child: const Text(
-                              'Clique Aqui!',
-                              style: TextStyle(
+                            child: Text(
+                              S.of(context).registerHere,
+                              style: const TextStyle(
                                 color: Color(0xFF8B3A2E),
                                 fontWeight: FontWeight.bold,
                               ),

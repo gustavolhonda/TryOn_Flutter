@@ -1,0 +1,16 @@
+{
+  "requiredField": "Este campo é obrigatório",
+  "wrongEmail": "Email incorreto",
+  "wrongPassword": "Senha incorreta",
+  "unknownError": "Erro desconhecido",
+  "welcomeTitle": "Bem vindo ao TryOn!",
+  "welcomeSubtitle": "Prove e Aprove",
+  "emailLabel": "Email",
+  "emailHint": "Insira o seu email",
+  "passwordLabel": "Senha",
+  "passwordHint": "Insira a sua senha",
+  "loginButton": "Entrar",
+  "forgotPassword": "Esqueceu a senha? Clique aqui",
+  "noAccount": "Ainda não tem uma conta?",
+  "registerHere": "Clique Aqui!"
+} 
