@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../generated/l10n.dart';
 
 class NotificationsScreen extends StatelessWidget {
   const NotificationsScreen({super.key});
@@ -7,14 +8,14 @@ class NotificationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Suas notificações'),
+        title: Text(S.of(context).notificationsTitle),
         backgroundColor: const Color(0xFFFCEAE5),
         foregroundColor: const Color(0xFF5C4438),
       ),
-      body: const Center(
+      body: Center(
         child: Text(
-          'Nenhuma notificação',
-          style: TextStyle(fontSize: 18),
+          S.of(context).noNotifications,
+          style: const TextStyle(fontSize: 18),
         ),
       ),
     );

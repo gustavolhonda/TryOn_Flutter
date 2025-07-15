@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../generated/l10n.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -7,12 +8,12 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Registrar'),
+        title: Text(S.of(context).registerTitle),
       ),
-      body: const Center(
+      body: Center(
         child: Text(
-          'Tela de Registro',
-          style: TextStyle(fontSize: 24),
+          S.of(context).registerScreen,
+          style: const TextStyle(fontSize: 24),
         ),
       ),
     );
