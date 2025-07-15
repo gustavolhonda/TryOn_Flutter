@@ -230,9 +230,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                         height: 140,
                                                         fit: BoxFit.cover,
                                                         placeholder: (context, url) =>
-                                                        const Center(
-                                                          child: CircularProgressIndicator(),
-                                                        ),
+                                                        const Center(child: CircularProgressIndicator()),
                                                         errorWidget: (context, url, error) =>
                                                         const Icon(Icons.error),
                                                       )
@@ -250,11 +248,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                         child: IconButton(
                                                           padding: EdgeInsets.zero,
                                                           onPressed: () {
-                                                            // Toggle favorite functionality
+                                                            context.read<ProductViewModel>().toggleFavorite(product.id);
                                                           },
-                                                          icon: const Icon(
-                                                            Icons.favorite_border,
-                                                            color: Color(0xFF8B3A2E),
+                                                          icon: Icon(
+                                                            context.watch<ProductViewModel>().isFavorite(product.id)
+                                                                ? Icons.favorite
+                                                                : Icons.favorite_border,
+                                                            color: const Color(0xFF8B3A2E),
                                                             size: 20,
                                                           ),
                                                         ),
@@ -263,16 +263,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                   ],
                                                 ),
                                               ),
-
                                               // Product Info
                                               Expanded(
                                                 child: Container(
                                                   width: double.infinity,
                                                   color: const Color(0xFFFCEAE5),
-                                                  padding: const EdgeInsets.symmetric(
-                                                    horizontal: 12,
-                                                    vertical: 8,
-                                                  ),
+                                                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                                                   child: Column(
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -344,7 +340,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     );
                                   },
                                 ),
-                              ),
+                              )
+
                           ],
                         ),
                       ),
