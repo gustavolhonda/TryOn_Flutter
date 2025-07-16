@@ -19,18 +19,12 @@ Aplicativo desenvolvido em Flutter para Aluguel de roupas.
 
 ## Como Testar
 
-### Testes Unitários
-Para executar os testes unitários:
+### Testes Unitários e Teste de banco de dados
+Para executar os testes unitários e teste de banco de dados:
 ```
 flutter test 
 ```
-Lembre-se de estar rodando o backend na porta 3001
-
-### Testes de Instrumentação
-Para executar os testes de instrumentação:
-```
-./gradlew connectedAndroidTest
-```
+Lembre-se de estar rodando o backend na porta 3001 para os testes unitários de repositories
 
 ## Estrutura do Projeto
 
