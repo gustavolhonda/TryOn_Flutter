@@ -1,16 +1,44 @@
-# atividade_avaliativa_2
+# TryOn Flutter
 
-A new Flutter project.
+Aplicativo desenvolvido em Flutter para Aluguel de roupas.
 
-## Getting Started
+## Membros
 
-This project is a starting point for a Flutter application.
+811773 - Jakson Huang Zheng
 
-A few resources to get you started if this is your first Flutter project:
+811716 - Gustavo Lamin Honda
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Como Buildar
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone o repositório
+2. Abra o projeto no Android Studio
+3. Sincronize o projeto com os arquivos Gradle
+4. Execute o emulador de celular
+5. Selecione o emulador de celular como device 
+6. Execute o programa usando o botão de Run verde na parte superior da IDE
+
+## Como Testar
+
+### Testes Unitários
+Para executar os testes unitários:
+```
+flutter test 
+```
+Lembre-se de estar rodando o backend na porta 3001
+
+### Testes de Instrumentação
+Para executar os testes de instrumentação:
+```
+./gradlew connectedAndroidTest
+```
+
+## Estrutura do Projeto
+
+- `lib/main.dart` - Código fonte principal
+- `test/repositories` - Testes unitários
+- `test/database` - Testes de persistencia local
+
+## Backend
+1. Clone o repositório https://github.com/gustavolhonda/mocked-backend-tryon e siga as instruções do READ.ME
+2. Rode ele localmente na porta 3001, assim o emulador consegue acessá-lo.
+3. No back é feito a parte de login e a listagem de produtos.
